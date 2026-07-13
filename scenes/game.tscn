@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bsck1cjy3h4bs"]
+
+[ext_resource type="Script" uid="uid://d3l7sy24garck" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://djvrymf65vw6r" path="res://assets/img/cookie.png" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://3nllsxtmf15a" path="res://scripts/count_container.gd" id="3_lnu2h"]
+
+[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
+font = SubResource("SystemFont_lbhrr")
+font_size = 60
+
+[node name="Game" type="Control" unique_id=2042090376]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqjtg")
+
+[node name="SproutContainer" type="AspectRatioContainer" parent="." unique_id=745696225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprout" type="TextureButton" parent="SproutContainer" unique_id=558741686]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+action_mode = 0
+texture_normal = ExtResource("2_lnu2h")
+stretch_mode = 3
+
+[node name="CountContainer" type="VBoxContainer" parent="." unique_id=1900776103]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0027777778
+anchor_top = 0.14102565
+anchor_right = 0.99722224
+anchor_bottom = 0.22649573
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("3_lnu2h")
+
+[node name="LeafCount" type="Label" parent="CountContainer" unique_id=1235409412]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "00 Leafs"
+label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 3
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="leaf_changed" from="." to="CountContainer" method="_on_game_leaf_changed"]
+[connection signal="pressed" from="SproutContainer/Sprout" to="." method="_on_texture_button_pressed"]
