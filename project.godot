@@ -12,12 +12,14 @@ config_version=5
 
 config/name="SalamancaGREEN"
 config/version="0.01"
-config/features=PackedStringArray("4.6", "Mobile")
+run/main_scene="uid://bsck1cjy3h4bs"
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SaveHandler="*res://globals/handlers/save_handler.gd"
+ClickHandler="*uid://b2jxwwrmkcmnm"
 
 [display]
 

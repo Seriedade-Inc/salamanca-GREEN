@@ -28,11 +28,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprout" type="TextureButton" parent="SproutContainer" unique_id=558741686]
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
+layout_direction = 1
 action_mode = 0
 texture_normal = ExtResource("2_lnu2h")
 stretch_mode = 3
@@ -51,10 +51,10 @@ alignment = 1
 script = ExtResource("3_lnu2h")
 
 [node name="LeafCount" type="Label" parent="CountContainer" unique_id=1235409412]
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+layout_direction = 1
 text = "00 Leafs"
 label_settings = SubResource("LabelSettings_iywne")
 horizontal_alignment = 3

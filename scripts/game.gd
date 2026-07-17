@@ -15,12 +15,8 @@ func _ready() -> void:
 	_load_game()
 
 func _on_texture_button_pressed() -> void:
-	leafs_count += click
-	total_leafs += click
-	total_clicks += 1
-	emit_signal("leaf_changed", leafs_count)
-	SaveHandler.save(get_save_data())
-
+	ClickHandler.handle_click(self)
+	
 func get_save_data() -> Dictionary:
 	return {
 		"version": 1,
