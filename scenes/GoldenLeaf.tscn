@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c4b13hmvpbsfb"]
+
+[ext_resource type="Texture2D" uid="uid://50hbxkkmjgp5" path="res://assets/img/árvore (2).png" id="1_gxxi6"]
+[ext_resource type="Script" uid="uid://brttn5exar0w" path="res://scripts/golden_leaf.gd" id="2_i2f3i"]
+
+[node name="GoldenLeaf" type="TextureButton" unique_id=961937489]
+texture_normal = ExtResource("1_gxxi6")
+script = ExtResource("2_i2f3i")

@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dk7cs7wr4lcha"]
+
+[node name="ScreenEventLayer" type="CanvasLayer" unique_id=1244939293]
+follow_viewport_enabled = true

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsck1cjy3h4bs"]
 
 [ext_resource type="Script" uid="uid://d3l7sy24garck" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dk7cs7wr4lcha" path="res://scenes/screen_event_layer.tscn" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://djvrymf65vw6r" path="res://assets/img/cookie.png" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://3nllsxtmf15a" path="res://scripts/count_container.gd" id="3_lnu2h"]
 
@@ -18,6 +19,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqjtg")
+
+[node name="MenuUILayer" type="CanvasLayer" parent="." unique_id=307098091]
+layer = 2
+
+[node name="ScreenEventLayer" parent="." unique_id=1244939293 instance=ExtResource("2_lbhrr")]
 
 [node name="SproutContainer" type="AspectRatioContainer" parent="." unique_id=745696225]
 layout_mode = 1

@@ -11,6 +11,7 @@ var upgrades := {}
 var configurations := {}
 
 func _ready() -> void:
+	EventHandler.target_layer = $ScreenEventLayer
 	add_to_group("saveables")
 	_load_game()
 
