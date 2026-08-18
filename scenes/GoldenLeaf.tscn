@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://c4b13hmvpbsfb"]
 
-[ext_resource type="Texture2D" uid="uid://50hbxkkmjgp5" path="res://assets/img/árvore (2).png" id="1_gxxi6"]
+[ext_resource type="Texture2D" uid="uid://8sdlctgg644h" path="res://assets/img/kenney_foliageSprites/PNG/Shaded/sprite_0086.png" id="1_i2f3i"]
 [ext_resource type="Script" uid="uid://brttn5exar0w" path="res://scripts/golden_leaf.gd" id="2_i2f3i"]
+[ext_resource type="Texture2D" uid="uid://ccss44x3pid3b" path="res://assets/img/sunburst.png" id="3_r1xaq"]
 
 [node name="GoldenLeaf" type="TextureButton" unique_id=961937489]
-texture_normal = ExtResource("1_gxxi6")
+modulate = Color(0.83137256, 0.6862745, 0.21568628, 1)
+self_modulate = Color(0.8804722, 0.8804717, 0, 1)
+z_index = 1
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("1_i2f3i")
 script = ExtResource("2_i2f3i")
+
+[node name="Shine" type="TextureRect" parent="." unique_id=1103242956]
+self_modulate = Color(1, 0.8330378, 0.36060753, 1)
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r1xaq")
+expand_mode = 1

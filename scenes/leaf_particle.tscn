@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1dtw3udtw3o0"]
+
+[ext_resource type="Script" uid="uid://b4e8m83l0w0ri" path="res://scripts/leaf_particle.gd" id="1_script"]
+
+[node name="LeafParticle" type="CPUParticles2D" unique_id=1636672291]
+scale = Vector2(0.5, 0.5)
+amount = 1
+lifetime = 0.8
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color = Color(0.34117648, 0.84313726, 0.3882353, 1)
+hue_variation_min = -0.55
+hue_variation_max = 0.55
+script = ExtResource("1_script")

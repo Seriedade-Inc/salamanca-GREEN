@@ -1,4 +1,5 @@
 extends TextureButton
+@onready var shine: TextureRect = $Shine
 
 @export var despawn_time: float = 10.0 # Tempo que ela fica na tela antes de sumir
 @export var Golden_Leaf_duration: float = 5.0
@@ -7,11 +8,11 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 	await get_tree().create_timer(despawn_time).timeout
 	expire_leaf()
-
+		
 func _on_pressed() -> void:
-	activate_bonus()
-	visible = false
+	pressed.disconnect(_on_pressed)
 	disabled = true
+	visible = false
 	await activate_bonus()
 	queue_free()
 

@@ -24,6 +24,7 @@ func get_default_data() -> Dictionary:
 		"click": 1,
 		"total_leafs": 0,
 		"total_clicks": 0,
+		"buildings": { "seedling": 0 },
 		"upgrades": {},
 		"configurations": {
 			"sound_volume": 1.0,

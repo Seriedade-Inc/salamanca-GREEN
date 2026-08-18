@@ -2,14 +2,23 @@
 
 [ext_resource type="Script" uid="uid://d3l7sy24garck" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dk7cs7wr4lcha" path="res://scenes/screen_event_layer.tscn" id="2_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://djvrymf65vw6r" path="res://assets/img/cookie.png" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://c5ftovqph5g8" path="res://assets/img/garden_gfx_v2/sprites/trees/seqA_tree008.png" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://3nllsxtmf15a" path="res://scripts/count_container.gd" id="3_lnu2h"]
-
-[sub_resource type="SystemFont" id="SystemFont_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://chbdkb7bc2lk3" path="res://assets/img/sky.png" id="4_sky"]
+[ext_resource type="FontFile" uid="uid://dd37marjjos2" path="res://assets/fonts/Boxel_v0.1_beta.ttf" id="5_iywne"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iywne"]
-font = SubResource("SystemFont_lbhrr")
+resource_local_to_scene = true
+line_spacing = 1.0
+font = ExtResource("5_iywne")
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
+resource_local_to_scene = true
+line_spacing = 1.0
+font = ExtResource("5_iywne")
+font_size = 36
+font_color = Color(0.8980392, 0.8980392, 0.8980392, 1)
 
 [node name="Game" type="Control" unique_id=2042090376]
 layout_mode = 3
@@ -19,6 +28,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqjtg")
+
+[node name="Background" type="TextureRect" parent="." unique_id=646839346]
+modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_sky")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="MenuUILayer" type="CanvasLayer" parent="." unique_id=307098091]
 layer = 2
@@ -32,12 +53,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+ratio = 10.0
+stretch_mode = 3
 
 [node name="Sprout" type="TextureButton" parent="SproutContainer" unique_id=558741686]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(10, 10)
+offset_transform_visual_only = false
 layout_direction = 1
 action_mode = 0
 texture_normal = ExtResource("2_lnu2h")
@@ -51,18 +77,27 @@ anchor_left = -0.0027777778
 anchor_top = 0.14102565
 anchor_right = 0.99722224
 anchor_bottom = 0.22649573
-grow_horizontal = 2
-grow_vertical = 2
 alignment = 1
 script = ExtResource("3_lnu2h")
 
 [node name="LeafCount" type="Label" parent="CountContainer" unique_id=1235409412]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
 layout_direction = 1
-text = "00 Leafs"
+text = "00 Folhas"
 label_settings = SubResource("LabelSettings_iywne")
+horizontal_alignment = 3
+vertical_alignment = 1
+uppercase = true
+
+[node name="LeafsPersec" type="Label" parent="CountContainer" unique_id=1115602098]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+layout_direction = 1
+text = "Per Sec: 0/s"
+label_settings = SubResource("LabelSettings_p57ef")
 horizontal_alignment = 3
 vertical_alignment = 1
 uppercase = true

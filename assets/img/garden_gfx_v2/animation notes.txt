@@ -1,0 +1,12 @@
+If this distribution contains animations, they are structured as "seq" followed by a letter, and then the sprite name.
+This means seqA_bush000 is followed by seqB_bush000 and then seqC_bush000 (assuming it exists).
+
+Animations may take several forms - 
+* seqA,B,C,D - a ping-pong sequence, often used for wind. The correct animation is A,B,C,D,C,B, (repeats)
+Some may prefer to hold the first and last frames (A & D) for added effect (repeats)
+I suggest 0.2s per frame
+
+* seqA,B,C - used for liquid animations. The correct animation is A,B,C,B, (repeats)
+If you can vary the timing, I suggest 0.6s, 0.4s, 0.6s, 0.4s, (repeats)
+
+

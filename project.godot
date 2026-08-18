@@ -27,6 +27,9 @@ BuildingHandler="*uid://bpjceot7wuomc"
 
 window/size/viewport_width=1080
 window/size/viewport_height=2340
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation="portrait"
 
 [physics]
 
@@ -34,5 +37,6 @@ window/size/viewport_height=2340
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
