@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://3nllsxtmf15a" path="res://scripts/count_container.gd" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://chbdkb7bc2lk3" path="res://assets/img/sky.png" id="4_sky"]
 [ext_resource type="FontFile" uid="uid://dd37marjjos2" path="res://assets/fonts/Boxel_v0.1_beta.ttf" id="5_iywne"]
+[ext_resource type="Script" uid="uid://dcm4e2g4nwuad" path="res://scripts/click_player.gd" id="7_u5sy4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iywne"]
 resource_local_to_scene = true
@@ -102,5 +103,12 @@ horizontal_alignment = 3
 vertical_alignment = 1
 uppercase = true
 
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=437899371]
+volume_db = -10.0
+script = ExtResource("7_u5sy4")
+
+[node name="MenuPlayer" type="AudioStreamPlayer" parent="." unique_id=11596581]
+
 [connection signal="leaf_changed" from="." to="CountContainer" method="_on_game_leaf_changed"]
 [connection signal="pressed" from="SproutContainer/Sprout" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="SproutContainer/Sprout" to="ClickPlayer" method="_on_sprout_pressed"]
