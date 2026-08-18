@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 SaveHandler="*res://globals/handlers/save_handler.gd"
 ClickHandler="*uid://b2jxwwrmkcmnm"
 EventHandler="*uid://dguit1ltvym3e"
+BuildingHandler="*uid://bpjceot7wuomc"
 
 [display]
 

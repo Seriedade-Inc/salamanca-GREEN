@@ -7,6 +7,9 @@ var leafs_count := 0
 var click := 1
 var total_leafs := 0
 var total_clicks := 0
+var buildings :={
+	"seedling":0
+}
 var upgrades := {}
 var configurations := {}
 
@@ -14,6 +17,9 @@ func _ready() -> void:
 	EventHandler.target_layer = $ScreenEventLayer
 	add_to_group("saveables")
 	_load_game()
+
+	print(BuildingHandler.BUILDINGS)
+	print(buildings)
 
 func _on_texture_button_pressed() -> void:
 	ClickHandler.handle_click(self)
