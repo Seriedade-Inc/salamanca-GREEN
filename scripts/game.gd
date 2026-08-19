@@ -3,6 +3,7 @@ extends Control
 
 signal leaf_changed
 signal buildings_changed
+signal Sprout_Clicked
 
 var leafs_count := 0
 var click := 1
@@ -26,6 +27,7 @@ func _init_buildings() -> void:
 
 func _on_texture_button_pressed() -> void:
 	ClickHandler.handle_click(self)
+	emit_signal("Sprout_Clicked", ClickHandler.amount_per_click)
 	_spawn_leaf_particle()
 
 func _spawn_leaf_particle() -> void:
