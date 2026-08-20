@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH := "user://save.json"
-const AUTO_SAVE_INTERVAL := 60.0
+const AUTO_SAVE_INTERVAL := 30.0
 
 var _auto_save_timer: Timer
 
@@ -13,8 +13,12 @@ func _ready() -> void:
 	_auto_save_timer.start()
 
 func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		get_tree().call_group("saveables", "save_game")
+	match what:
+		NOTIFICATION_WM_CLOSE_REQUEST, NOTIFICATION_WM_GO_BACK_REQUEST:
+			get_tree().call_group("saveables" , "save_game")
+			get_tree().quit()	
+		NOTIFICATION_APPLICATION_PAUSED, NOTIFICATION_APPLICATION_FOCUS_OUT:
+			get_tree().call_group("saveables", "save_game")
 
 func get_default_data() -> Dictionary:
 	return {

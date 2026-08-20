@@ -206,5 +206,6 @@ script = ExtResource("7_u5sy4")
 [connection signal="timeout" from="SproutContainer/Indicators/Template/InstanceTimer" to="SproutContainer/Indicators/Template" method="_on_instance_timer_timeout"]
 [connection signal="button_down" from="SproutContainer/Sprout" to="SproutContainer" method="_on_sprout_button_down"]
 [connection signal="button_up" from="SproutContainer/Sprout" to="SproutContainer" method="_on_sprout_button_up"]
+[connection signal="gui_input" from="SproutContainer/Sprout" to="." method="_on_sprout_gui_input"]
 [connection signal="pressed" from="SproutContainer/Sprout" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="SproutContainer/Sprout" to="ClickPlayer" method="_on_sprout_pressed"]

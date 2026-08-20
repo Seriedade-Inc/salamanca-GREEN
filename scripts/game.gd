@@ -16,6 +16,7 @@ var configurations := {}
 const LEAF_PARTICLE := preload("res://scenes/leaf_particle.tscn")
 
 func _ready() -> void:
+	get_tree().auto_accept_quit = false
 	EventHandler.target_layer = $ScreenEventLayer
 	add_to_group("saveables")
 	_init_buildings()
@@ -28,11 +29,19 @@ func _init_buildings() -> void:
 func _on_texture_button_pressed() -> void:
 	ClickHandler.handle_click(self)
 	emit_signal("Sprout_Clicked", ClickHandler.amount_per_click)
-	_spawn_leaf_particle()
 
-func _spawn_leaf_particle() -> void:
+func _on_sprout_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		_spawn_leaf_particle(_sprout_point_to_screen(event.position))
+	elif event is InputEventScreenTouch and event.pressed:
+		_spawn_leaf_particle(_sprout_point_to_screen(event.position))
+
+func _sprout_point_to_screen(local_point: Vector2) -> Vector2:
+	return $SproutContainer/Sprout.get_global_transform() * local_point
+
+func _spawn_leaf_particle(at: Vector2) -> void:
 	var particle: CPUParticles2D = LEAF_PARTICLE.instantiate()
-	particle.setup_at(get_global_mouse_position())
+	particle.setup_at(at)
 	$ScreenEventLayer.add_child(particle)
 
 func purchase_building(building_id: String) -> bool:
