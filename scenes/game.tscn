@@ -81,41 +81,149 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -530.0
+offset_top = -370.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
-[node name="Button" type="Button" parent="MenuUILayer/Panel" unique_id=1683466765]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.003
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 105.24
-offset_top = 38.0
-offset_right = -928.0
-offset_bottom = -442.0
-scale = Vector2(3, 3)
+[node name="GridContainer" type="GridContainer" parent="MenuUILayer/Panel" unique_id=501735995]
+propagate_maximum_size = false
+clip_contents = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 64.0
+offset_right = 1060.0
+offset_bottom = 301.0
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="ShopButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=701962026]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
 clip_text = true
 icon_alignment = 1
+expand_icon = true
 
-[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/Button" unique_id=1237216490]
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/ShopButton" unique_id=733845621]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 4096.0
-offset_bottom = 13.0
+offset_top = -6.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
-text = "Loja"
+offset_transform_scale = Vector2(1.5, 1.5)
+text = "LOja"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="TreeButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=1543774958]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+icon = ExtResource("4_vtaks")
+autowrap_trim_flags = 192
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/TreeButton" unique_id=959538743]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 12)
+offset_transform_scale = Vector2(1.5, 1.5)
+text = "ARvore"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="StatsButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=686457599]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+icon = ExtResource("4_vtaks")
+autowrap_trim_flags = 192
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/StatsButton" unique_id=898494366]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 12)
+offset_transform_scale = Vector2(1.5, 1.5)
+text = "Status"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="ConfigButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=1482556661]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+icon = ExtResource("4_vtaks")
+autowrap_trim_flags = 192
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/ConfigButton" unique_id=1317502914]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 12)
+offset_transform_scale = Vector2(1.5, 1.5)
+text = "config"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -201,8 +309,6 @@ script = ExtResource("7_u5sy4")
 
 [node name="MenuPlayer" type="AudioStreamPlayer" parent="." unique_id=11596581]
 
-[connection signal="Sprout_Clicked" from="." to="SproutContainer" method="_on_game_sprout_clicked"]
-[connection signal="leaf_changed" from="." to="CountContainer" method="_on_game_leaf_changed"]
 [connection signal="timeout" from="SproutContainer/Indicators/Template/InstanceTimer" to="SproutContainer/Indicators/Template" method="_on_instance_timer_timeout"]
 [connection signal="button_down" from="SproutContainer/Sprout" to="SproutContainer" method="_on_sprout_button_down"]
 [connection signal="button_up" from="SproutContainer/Sprout" to="SproutContainer" method="_on_sprout_button_up"]
