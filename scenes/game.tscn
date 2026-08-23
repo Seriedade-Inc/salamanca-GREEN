@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bsck1cjy3h4bs"]
 
+[ext_resource type="StyleBox" uid="uid://qdgipvjow2cx" path="res://assets/img/Resourcers/Theme & Style/Normal_Button.tres" id="1_kvuet"]
 [ext_resource type="Script" uid="uid://d3l7sy24garck" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dk7cs7wr4lcha" path="res://scenes/screen_event_layer.tscn" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://c5ftovqph5g8" path="res://assets/img/garden_gfx_v2/sprites/trees/seqA_tree008.png" id="2_lnu2h"]
@@ -8,11 +9,50 @@
 [ext_resource type="Texture2D" uid="uid://3f2eltip6k0q" path="res://assets/img/icons8-store-50.png" id="4_vtaks"]
 [ext_resource type="FontFile" uid="uid://dd37marjjos2" path="res://assets/fonts/Boxel_v0.1_beta.ttf" id="5_iywne"]
 [ext_resource type="Script" uid="uid://cd6an0gf1x3ip" path="res://scripts/sprout_container.gd" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://50hbxkkmjgp5" path="res://assets/img/árvore (2).png" id="7_trtic"]
 [ext_resource type="Script" uid="uid://dcm4e2g4nwuad" path="res://scripts/click_player.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://bcltvecnsejtj" path="res://scripts/instance_indicator_template.gd" id="7_vtaks"]
+[ext_resource type="Theme" uid="uid://duv20pnqd23s5" path="res://assets/img/Defaul2.tres" id="8_ir15t"]
+
+[sub_resource type="Theme" id="Theme_0a04i"]
+Button/styles/normal = ExtResource("1_kvuet")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
 bg_color = Color(0.21635014, 0.13829133, 0.08819056, 1)
+
+[sub_resource type="Theme" id="Theme_hyo2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmnpm"]
+bg_color = Color(0.38115883, 0.25635064, 0.17538065, 1)
+border_width_bottom = 14
+border_color = Color(0.21568628, 0.13725491, 0.08627451, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+font = ExtResource("5_iywne")
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_448pd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kn16"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="Theme" id="Theme_ttxnw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1xaq"]
 bg_color = Color(0, 0.12156863, 0.24705882, 1)
@@ -20,12 +60,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
-font = ExtResource("5_iywne")
-font_size = 24
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
 font = ExtResource("5_iywne")
@@ -57,6 +91,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_0a04i")
 script = ExtResource("1_yqjtg")
 
 [node name="Background" type="TextureRect" parent="." unique_id=646839346]
@@ -86,39 +121,48 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
-[node name="GridContainer" type="GridContainer" parent="MenuUILayer/Panel" unique_id=501735995]
-propagate_maximum_size = false
-clip_contents = true
-layout_mode = 0
-offset_left = 20.0
-offset_top = 64.0
-offset_right = 1060.0
-offset_bottom = 301.0
-theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 0
-columns = 4
+[node name="MarginContainer" type="MarginContainer" parent="MenuUILayer/Panel" unique_id=543772493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.89
+offset_transform_enabled = true
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
-[node name="ShopButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=701962026]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUILayer/Panel/MarginContainer" unique_id=1451837528]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="ShopButton" type="Button" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer" unique_id=701962026]
 custom_minimum_size = Vector2(1, 1)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+theme = SubResource("Theme_hyo2j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qmnpm")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
 clip_text = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/ShopButton" unique_id=733845621]
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/ShopButton" unique_id=733845621]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -6.0
-offset_bottom = 19.0
+offset_top = -28.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
@@ -131,20 +175,21 @@ vertical_alignment = 2
 autowrap_trim_flags = 0
 uppercase = true
 
-[node name="TreeButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=1543774958]
+[node name="TreeButton" type="Button" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer" unique_id=1543774958]
 custom_minimum_size = Vector2(1, 1)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
-icon = ExtResource("4_vtaks")
+theme = SubResource("Theme_448pd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5kn16")
+icon = ExtResource("7_trtic")
 autowrap_trim_flags = 192
 clip_text = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/TreeButton" unique_id=959538743]
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/TreeButton" unique_id=959538743]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -164,12 +209,13 @@ vertical_alignment = 2
 autowrap_trim_flags = 0
 uppercase = true
 
-[node name="StatsButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=686457599]
+[node name="ConfigButton" type="Button" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer" unique_id=1482556661]
 custom_minimum_size = Vector2(1, 1)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource("Theme_ttxnw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
@@ -177,40 +223,7 @@ clip_text = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/StatsButton" unique_id=898494366]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -6.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 0
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 12)
-offset_transform_scale = Vector2(1.5, 1.5)
-text = "Status"
-label_settings = SubResource("LabelSettings_gee14")
-horizontal_alignment = 1
-vertical_alignment = 2
-autowrap_trim_flags = 0
-uppercase = true
-
-[node name="ConfigButton" type="Button" parent="MenuUILayer/Panel/GridContainer" unique_id=1482556661]
-custom_minimum_size = Vector2(1, 1)
-custom_maximum_size = Vector2(200, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
-icon = ExtResource("4_vtaks")
-autowrap_trim_flags = 192
-clip_text = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/GridContainer/ConfigButton" unique_id=1317502914]
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/ConfigButton" unique_id=1317502914]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -224,6 +237,40 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
 offset_transform_scale = Vector2(1.5, 1.5)
 text = "config"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="StatsButton" type="Button" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer" unique_id=686457599]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8_ir15t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+icon = ExtResource("4_vtaks")
+autowrap_trim_flags = 192
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/StatsButton" unique_id=898494366]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 12)
+offset_transform_scale = Vector2(1.5, 1.5)
+text = "Status"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
