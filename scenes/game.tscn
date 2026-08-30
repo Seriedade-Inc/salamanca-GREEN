@@ -20,46 +20,11 @@ Button/styles/normal = ExtResource("1_kvuet")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
 bg_color = Color(0.21635014, 0.13829133, 0.08819056, 1)
 
-[sub_resource type="Theme" id="Theme_hyo2j"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmnpm"]
-bg_color = Color(0.38115883, 0.25635064, 0.17538065, 1)
-border_width_bottom = 14
-border_color = Color(0.21568628, 0.13725491, 0.08627451, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-shadow_size = 5
-
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("5_iywne")
 font_size = 24
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_448pd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kn16"]
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-
-[sub_resource type="Theme" id="Theme_ttxnw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1xaq"]
-bg_color = Color(0, 0.12156863, 0.24705882, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
 font = ExtResource("5_iywne")
@@ -147,8 +112,8 @@ custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_hyo2j")
-theme_override_styles/normal = SubResource("StyleBoxFlat_qmnpm")
+layout_direction = 1
+theme = ExtResource("8_ir15t")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
 clip_text = true
@@ -181,8 +146,7 @@ custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_448pd")
-theme_override_styles/normal = SubResource("StyleBoxFlat_5kn16")
+theme = ExtResource("8_ir15t")
 icon = ExtResource("7_trtic")
 autowrap_trim_flags = 192
 clip_text = true
@@ -215,8 +179,7 @@ custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_ttxnw")
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
+theme = ExtResource("8_ir15t")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
 clip_text = true
@@ -250,7 +213,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("8_ir15t")
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1xaq")
 icon = ExtResource("4_vtaks")
 autowrap_trim_flags = 192
 clip_text = true
