@@ -13,12 +13,15 @@
 [ext_resource type="Script" uid="uid://dcm4e2g4nwuad" path="res://scripts/click_player.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://bcltvecnsejtj" path="res://scripts/instance_indicator_template.gd" id="7_vtaks"]
 [ext_resource type="Theme" uid="uid://duv20pnqd23s5" path="res://assets/img/Defaul2.tres" id="8_ir15t"]
+[ext_resource type="Texture2D" uid="uid://dv0jlr16x8ueb" path="res://assets/img/garden_gfx_v2/sprites/MediavelUI/MediavelFree.png" id="9_trtic"]
+[ext_resource type="Texture2D" uid="uid://bibxeol875x3o" path="res://assets/img/76716 (1) (3).png" id="10_ca42v"]
+[ext_resource type="Texture2D" uid="uid://byiso8xijsx4n" path="res://assets/img/87578 (3).png" id="11_rysoc"]
 
 [sub_resource type="Theme" id="Theme_0a04i"]
 Button/styles/normal = ExtResource("1_kvuet")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
-bg_color = Color(0.21635014, 0.13829133, 0.08819056, 1)
+bg_color = Color(0.42730808, 0.28755927, 0.19672257, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gee14"]
 font = ExtResource("5_iywne")
@@ -132,6 +135,7 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
+offset_transform_position_ratio = Vector2(0, -0.1)
 offset_transform_scale = Vector2(1.5, 1.5)
 text = "LOja"
 label_settings = SubResource("LabelSettings_gee14")
@@ -165,8 +169,9 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
+offset_transform_position_ratio = Vector2(0, 0.5)
 offset_transform_scale = Vector2(1.5, 1.5)
-text = "ARvore"
+text = "Arvore"
 label_settings = SubResource("LabelSettings_gee14")
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -180,11 +185,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("8_ir15t")
-icon = ExtResource("4_vtaks")
+theme_override_icons/icon = ExtResource("9_trtic")
+icon = ExtResource("10_ca42v")
 autowrap_trim_flags = 192
 clip_text = true
 icon_alignment = 1
-expand_icon = true
 
 [node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/ConfigButton" unique_id=1317502914]
 layout_mode = 1
@@ -198,6 +203,7 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
+offset_transform_position_ratio = Vector2(0, 0.5)
 offset_transform_scale = Vector2(1.5, 1.5)
 text = "config"
 label_settings = SubResource("LabelSettings_gee14")
@@ -213,11 +219,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("8_ir15t")
-icon = ExtResource("4_vtaks")
+icon = ExtResource("11_rysoc")
 autowrap_trim_flags = 192
 clip_text = true
 icon_alignment = 1
-expand_icon = true
 
 [node name="LojaLabel" type="Label" parent="MenuUILayer/Panel/MarginContainer/HBoxContainer/StatsButton" unique_id=898494366]
 layout_mode = 1
@@ -231,6 +236,7 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
+offset_transform_position_ratio = Vector2(0, 0.5)
 offset_transform_scale = Vector2(1.5, 1.5)
 text = "Status"
 label_settings = SubResource("LabelSettings_gee14")
