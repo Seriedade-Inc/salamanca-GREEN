@@ -28,7 +28,7 @@ func _init_buildings() -> void:
 
 func _on_texture_button_pressed() -> void:
 	ClickHandler.handle_click(self)
-	emit_signal("Sprout_Clicked", ClickHandler.amount_per_click)
+	emit_signal("Sprout_Clicked", ClickHandler.calculate_click_value(self))
 
 func _on_sprout_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -73,6 +73,8 @@ func _load_game() -> void:
 		buildings[building_id] = saved_buildings.get(building_id, 0)
 	upgrades = data.get("upgrades", {})
 	configurations = data.get("configurations", {})
+	UpgradeHandler.init_upgrades(self)
+	UpgradeHandler._recalculate_effects(self)
 	leaf_changed.emit(leafs_count)
 	buildings_changed.emit()
 

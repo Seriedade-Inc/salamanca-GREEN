@@ -30,7 +30,7 @@ func carregar_efeitos() -> void:
 			nome_arquivo = dir.get_next()
 		dir.list_dir_end()
 
-func _on_sprout_pressed(event: InputEvent) -> void:
+func _on_sprout_pressed() -> void:
 	
 	if not pode_tocar:
 		return

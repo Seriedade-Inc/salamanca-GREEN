@@ -8,7 +8,7 @@ func handle_click(game: main_game) -> void:
 	apply_click(game, amount)
 
 func calculate_click_value(game: main_game) -> int:
-	return game.click * amount_per_click
+	return UpgradeHandler.get_click_value(game) * amount_per_click
 
 func apply_click(game: main_game, amount: int) -> void:
 	game.leafs_count += amount

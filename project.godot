@@ -22,6 +22,7 @@ SaveHandler="*res://globals/handlers/save_handler.gd"
 ClickHandler="*uid://b2jxwwrmkcmnm"
 EventHandler="*uid://dguit1ltvym3e"
 BuildingHandler="*uid://bpjceot7wuomc"
+UpgradeHandler="*res://globals/handlers/upgrade_handler.gd"
 
 [display]
 

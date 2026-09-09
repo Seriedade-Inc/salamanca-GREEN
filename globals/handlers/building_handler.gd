@@ -49,7 +49,9 @@ func _ready() -> void:
 
 func get_cost(building_id: String, owned: int) -> int:
 	var data: Dictionary = BUILDINGS[building_id]
-	return int(data["base_price"] * pow(COST_SCALE, owned))
+	var base_price: float = data["base_price"]
+	var base_cost: float = base_price * pow(COST_SCALE, owned)
+	return UpgradeHandler.get_building_cost(int(base_cost))
 
 func purchase(building_id: String, game: main_game) -> bool:
 	var owned: int = game.buildings.get(building_id, 0)
@@ -66,7 +68,7 @@ func get_production_per_second(game: main_game) -> int:
 	for building_id in game.buildings:
 		var count: int = game.buildings[building_id]
 		var data: Dictionary = BUILDINGS[building_id]
-		total += data["production"] * count
+		total += UpgradeHandler.get_building_production(building_id, data["production"]) * count
 	return total
 
 func _on_production_tick() -> void:

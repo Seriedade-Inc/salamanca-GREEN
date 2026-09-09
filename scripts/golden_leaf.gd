@@ -19,9 +19,10 @@ func _on_pressed() -> void:
 	queue_free()
 
 func activate_bonus() -> void:
-	print("Folha Dourada Clicada! Multiplicador x2 por: ", Golden_Leaf_duration ," segundos!")
+	var duration: float = UpgradeHandler.get_golden_leaf_duration(Golden_Leaf_duration)
+	print("Folha Dourada Clicada! Multiplicador x2 por: ", duration, " segundos!")
 	ClickHandler.amount_per_click *= 2
-	await get_tree().create_timer(Golden_Leaf_duration).timeout
+	await get_tree().create_timer(duration).timeout
 	ClickHandler.amount_per_click /= 2 
 	print("O efeito da Folha Dourada acabou.")
 
